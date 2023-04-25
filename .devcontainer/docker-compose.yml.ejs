@@ -9,8 +9,12 @@ services:
         USER_UID: <%=userUID%>
     environment:
       - SHELL=/bin/bash
-      - MONGO_TEST_URL=mongodb://admin:mindgrep@mongodb1,mongodb2,mongodb3:27017/<%=mongoDbName%>
-      - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/<%=postgresDbName%>
+      <% if (mongodb) { %>
+        - MONGO_TEST_URL=mongodb://admin:mindgrep@mongodb1,mongodb2,mongodb3:27017/<%=mongoDbName%>
+      <% } %>
+      <% if(postgres) { %>
+        - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/<%=postgresDbName%>
+      <% } %>
       - PORT=<%=svcPort%>
     volumes:
       - ..:/workspace/development/app:cached
@@ -63,7 +67,7 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - <%=postgresDbPort%>:5432
-    volumes: 
+    volumes:
       - postgresql-data:/var/lib/postgresql/data
 
 <% } %>
@@ -74,7 +78,6 @@ services:
       - <%=zookeeperPort%>:2181
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
-      
   kafka:
     image: docker.io/bitnami/kafka:3.1
     ports:
@@ -93,7 +96,6 @@ services:
 
 <% } %>
 <% if (redis) { %>
-
   redis:
     image: redis:7.0
     environment:
@@ -115,7 +117,7 @@ services:
       - mongodb3
     restart: always
     command: 'bash -c "/scripts/mongodb_init.sh"'
-    
+
   mongodb2:
     image: mongo:5.0
     volumes:
@@ -153,7 +155,7 @@ volumes:
 <% if (mongodb) { %>
   mongodb1-data:
   mongodb2-data:
-  mongodb3-data:    
+  mongodb3-data:
 <% } %>
 <% } %>
 
