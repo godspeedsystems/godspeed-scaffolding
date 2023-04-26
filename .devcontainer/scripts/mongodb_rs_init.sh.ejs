@@ -36,29 +36,29 @@ mongosh <<EOF
     admin.createUser(
         {
         user: "admin",
-        pwd: "mindgrep",
+        pwd: "godspeed",
         roles: [
              "clusterAdmin",
              { role: "root", db: "admin" }
             ]
         });
-        db.getSiblingDB("admin").auth("admin", "mindgrep");
+        db.getSiblingDB("admin").auth("admin", "godspeed");
         rs.status();
         exit
 EOF
 
-mongosh  mongodb://admin:mindgrep@mongodb1,mongodb2,mongodb3/admin <<EOF
+mongosh  mongodb://admin:godspeed@mongodb1,mongodb2,mongodb3/admin <<EOF
     use <%=mongoDbName%>;
     db.collection.insertOne({});
 EOF
 
-mongosh  mongodb://admin:mindgrep@mongodb1,mongodb2,mongodb3/admin <<EOF
+mongosh  mongodb://admin:godspeed@mongodb1,mongodb2,mongodb3/admin <<EOF
    use <%=mongoDbName%>;
    <%=mongoDbName%> = db.getSiblingDB("<%=mongoDbName%>");
    <%=mongoDbName%>.createUser(
      {
 	user: "admin",
-        pwd: "mindgrep",
+        pwd: "godspeed",
         roles: [ { role: "readWrite", db: "<%=mongoDbName%>" }]
      });
      exit

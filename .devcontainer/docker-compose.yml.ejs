@@ -10,9 +10,9 @@ services:
     environment:
       - SHELL=/bin/bash
       <% if (mongodb) { %>
-        - MONGO_TEST_URL=mongodb://admin:mindgrep@mongodb1,mongodb2,mongodb3:27017/<%=mongoDbName%>
+        - MONGO_TEST_URL=mongodb://admin:godspeed@mongodb1,mongodb2,mongodb3:27017/<%=mongoDbName%>
       <% } %>
-      <% if(postgres) { %>
+      <% if (postgresql) { %>
         - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/<%=postgresDbName%>
       <% } %>
       - PORT=<%=svcPort%>

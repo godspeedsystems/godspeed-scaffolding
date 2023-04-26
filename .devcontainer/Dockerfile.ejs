@@ -8,5 +8,5 @@ RUN sudo groupmod --gid $USER_GID $USERNAME \
     && chown -R $USER_UID:$USER_GID /workspace/development
 
 USER node
-RUN sudo npm i -g @mindgrep/godspeed
+RUN sudo npm i -g @godspeedsystems/godspeed
 RUN cd /workspace/development/gs_service && npm i
