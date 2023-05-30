@@ -1,6 +1,6 @@
 id: helloworld
 tasks:
   - id: fist_task
-    fn: com.gs.return
+    fn: com.gs.datasource
     args:
       name: 'Hello World!'

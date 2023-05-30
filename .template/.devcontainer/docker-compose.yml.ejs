@@ -11,11 +11,7 @@ services:
       - SHELL=/bin/bash
       - INSIDE_CONTAINER=true
       <% if (mongodb) { %>
-        <% if(mongodb.mode == 'single' ) { %>
-      - MONGO_URL=mongodb://admin:godspeed@mongodb:<%=mongodb.ports[0]%>/<%=mongodb.dbName%>
-        <% } else if(mongodb.mode == 'cluster') { %>
-      - MONGO_URL=mongodb://admin:godspeed@mongodb1,mongodb2,mongodb3:<%=mongodb.ports[0]%>/<%=mongodb.dbName%>
-        <% } %>
+      - MONGO_URL=mongodb://admin:godspeed@mongodb1,mongodb2,mongodb3:<%=mongodb.ports[1]%>/<%=mongodb.dbName%>
       <% } %>
       <% if (postgresql) { %>
       - POSTGRES_URL=postgresql://postgres:postgres@postgres:<%=postgresql.port%>/<%=postgresql.dbName%>
@@ -27,14 +23,10 @@ services:
     working_dir: /workspace/development/app
     ports:
       - <%=servicePort%>:<%=servicePort%>
-<% if (mongodb || postgresql || kafka || redis) { %>
+<% if (elasticsearch || mongodb || postgresql || kafka || redis) { %>
     depends_on:
 <% if (mongodb) { %>
-<% if (mongodb.mode === 'single') { %>
-      - mongodb
-<% } else if(mongodb.mode === 'cluster') { %>
       - mongodb1
-<% } %>
 <% } %>
 <% if (postgresql) { %>
       - postgres
@@ -114,7 +106,6 @@ services:
       - <%=redis.port%>:6379
 <% } %>
 <% if (mongodb) { %>
-<% if (mongodb.mode === 'cluster') { %>
   mongodb1:
     image: mongo:5.0
     volumes:
@@ -147,17 +138,6 @@ services:
       - <%=mongodb.ports[2]%>:27017
     restart: always
     command: 'bash -c "/scripts/mongodb_init.sh"'
-<% } else if (mongodb.mode === 'single') { %>
-  mongodb:
-    image: mongo:5.0
-    volumes:
-      - mongodb-data:/data/db
-      - ./scripts:/scripts
-    ports:
-      - <%=mongodb.ports[0]%>:27017
-    restart: always
-    command: 'bash -c "/scripts/mongodb_init.sh"'
-<% } %>
 <% } %>
 <% if (elasticsearch || postgresql || kafka || mongodb) { %>
 volumes:
@@ -172,12 +152,8 @@ volumes:
   zookeeper-data:
 <% } %>
 <% if (mongodb) { %>
-<% if (mongodb.mode === 'single') { %>
-  mongodb-data:
-<% } else if (mongodb.mode === 'cluster') { %>
   mongodb1-data:
   mongodb2-data:
   mongodb3-data:
-<% } %>
 <% } %>
 <% } %>
