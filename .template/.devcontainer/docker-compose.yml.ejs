@@ -16,6 +16,9 @@ services:
       <% if (postgresql) { %>
       - POSTGRES_URL=postgresql://postgres:postgres@postgres:<%=postgresql.port%>/<%=postgresql.dbName%>
       <% } %>
+      <% if (mysql) { %>
+      - MYSQL_URL=mysql://root:root@mysql:3306/<%=mysql.dbName%>
+      <% } %>      
       - PORT=<%=servicePort%>
     volumes:
       - ..:/workspace/development/app:cached
@@ -58,6 +61,21 @@ services:
       - elasticsearch-data:/usr/share/elasticsearch/data
     ports:
       - <%=elasticsearch.port%>:9200
+<% } %>
+
+<% if (mysql) { %>
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password --lower_case_table_names=1
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=<%=mysql.dbName%>
+    volumes:
+      - mysql-data:/var/lib/mysql      
+    ports:
+    - <%=mysql.port%>:3306
+
 <% } %>
 
 <% if (postgresql) { %>
@@ -139,7 +157,7 @@ services:
     restart: always
     command: 'bash -c "/scripts/mongodb_init.sh"'
 <% } %>
-<% if (elasticsearch || postgresql || kafka || mongodb) { %>
+<% if (elasticsearch || postgresql || kafka || mongodb || mysql ) { %>
 volumes:
 <% if (elasticsearch) { %>
   elasticsearch-data:
@@ -147,6 +165,11 @@ volumes:
 <% if (postgresql) { %>
   postgresql-data:
 <% } %>
+
+<% if (mysql) { %>
+  mysql-data:
+<% } %>
+
 <% if (kafka) { %>
   kafka-data:
   zookeeper-data:
