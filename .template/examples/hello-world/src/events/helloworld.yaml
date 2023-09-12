@@ -1,4 +1,4 @@
-"/helloworld.http.get":
+"http.get./helloworld":
   fn: helloworld
   body:
     type: object
