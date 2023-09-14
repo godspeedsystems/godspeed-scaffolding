@@ -11,11 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/config": "^3.3.0",
-    "@types/express": "^4.17.17",
-    "@types/lodash": "^4.14.197",
     "@types/node": "^18.14.2",
-    "@types/socket.io": "^3.0.2",
-    "@types/twilio": "^3.19.3",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
@@ -26,21 +22,9 @@
     "@godspeedsystems/plugins-express-as-http": "^1.0.0-beta.6",
     "@godspeedsystems/plugins-prisma-as-datastore": "^1.0.0-beta.6",
     "@prisma/client": "^5.2.0",
-    "axios": "^1.4.0",
-    "axios-time": "^1.0.0",
     "config": "^3.3.9",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-fileupload": "^1.4.0",
-    "form-data": "^4.0.0",
-    "godspeed-crud-api-generator": "^1.6.5",
-    "godspeed-node": "2.0.0-beta.1",
-    "godspeed-plugin-express-as-http": "^1.0.0-beta.0",
-    "lodash": "^4.17.21",
-    "openapi-client-axios": "^7.3.3",
     "pino-pretty": "^10.2.0",
-    "prisma": "^5.2.0",
-    "socket.io": "^4.7.2",
-    "twilio": "^4.14.0"
+    "prisma": "^5.2.0"
   }
 }
