@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "@godspeedsystems/api-generator": "^2.0.2",
-    "@godspeedsystems/core": "^2.0.0-beta.2",
-    "@godspeedsystems/plugins-express-as-http": "^1.0.0-beta.5",
-    "@godspeedsystems/plugins-prisma-as-datastore": "^1.0.0-beta.4",
+    "@godspeedsystems/core": "^2.0.0-beta.3",
+    "@godspeedsystems/plugins-express-as-http": "^1.0.0-beta.6",
+    "@godspeedsystems/plugins-prisma-as-datastore": "^1.0.0-beta.6",
     "@prisma/client": "^5.2.0",
     "axios": "^1.4.0",
     "axios-time": "^1.0.0",
