@@ -1,7 +1,7 @@
 {
   "files.exclude": {
     "**/.DS_Store": false,
-    "**/.git": true,
+    "**/.git": false,
     "**/.hg": false,
     "**/.svn": false,
     "**/CVS": false,
