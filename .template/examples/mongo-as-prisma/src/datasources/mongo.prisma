@@ -30,3 +30,7 @@ enum Role {
   USER
   ADMIN
 }
+
+
+
+//Schema for mongo-as-prisma example
