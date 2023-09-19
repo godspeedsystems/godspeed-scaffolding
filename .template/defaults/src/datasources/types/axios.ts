@@ -1,2 +1,2 @@
-import { DataSource } from "@godspeedsystems/plugins-prisma-as-datastore";
+import { DataSource } from "@godspeedsystems/plugins-axios-as-datasource";
 export default DataSource;
