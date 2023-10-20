@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon -r dotenv ./src/index.ts",
-    "gen-crud-api": "npx @godspeedsystems/api-generator"
+    "gen-crud-api": "npx @godspeedsystems/api-generator",
+    "build": "NODE_ENV=production swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/"
   },
   "author": "",
   "license": "ISC",
