@@ -1,0 +1,5 @@
+{
+  "watch": ["src"],
+  "ext": "ts,tsx",
+  "exec": "NODE_ENV=production swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && node dist/index.js"
+}
