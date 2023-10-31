@@ -8,7 +8,8 @@
     "gen-crud-api": "npx @godspeedsystems/api-generator",
     "build": "NODE_ENV=production swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/",
     "preview": "node dist/index.js",
-    "serve": "nodemon"
+    "serve": "nodemon",
+    "clean": "rm -rf dist"
   },
   "author": "",
   "license": "ISC",
