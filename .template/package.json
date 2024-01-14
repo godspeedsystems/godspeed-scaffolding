@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --watch src -e ts,js,yaml,json -r dotenv ./src/index.ts",
     "gen-crud-api": "npx @godspeedsystems/api-generator",
-    "build": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings && rsync -a ./src/plugins/ ./dist/plugins && node ./node_modules/@godspeedsystems/core/dist/core/transpiler.js",
+    "build": "NODE_ENV=production swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/",
     "preview": "node dist/index.js",
     "serve": "nodemon --watch src -e ts,js,yaml,json --exec 'npm run build && npm run preview'",
     "clean": "rm -rf dist"
