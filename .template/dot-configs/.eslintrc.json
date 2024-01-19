@@ -26,8 +26,8 @@
   },
   "rules": {
     "as-needed": "off",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": 0,
+    "no-unused-vars": 1,
+    "@typescript-eslint/no-unused-vars": 1,
     "@typescript-eslint/no-unused-vars-experimental": 0,
     
     "unused-imports/no-unused-imports": 0,
