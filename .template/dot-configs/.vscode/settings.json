@@ -7,5 +7,6 @@
     "**/CVS": false,
     "**/Thumbs.db": false,
     "**/.template": true
-  }
+  },
+  "debug.allowBreakpointsEverywhere": true
 }
