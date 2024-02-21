@@ -5,4 +5,4 @@ const gsApp = new Godspeed();
 
 // initilize the Godspeed App
 // this is responsible to load all kind of entities
-gsApp.initiliaze();
+gsApp.initialize();
