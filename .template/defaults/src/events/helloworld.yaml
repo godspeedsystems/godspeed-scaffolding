@@ -2,7 +2,7 @@
   fn: helloworld
   authn: false
   params:
-    - name: name_one
+    - name: name
       in: query
       required: true
       schema:
