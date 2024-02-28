@@ -34,7 +34,7 @@
 //     process.exit(1);
 //   }
 // };
-export default function (dsConfig: any, ctx: any) {
+module.exports = function (dsConfig: any, ctx: any) {
     // Note: dsCOnfig is type PlainObject and ctx is type GSContext
     // When creating proper function you will import them from @godspeedsystems/core
     // Check the commented code above
