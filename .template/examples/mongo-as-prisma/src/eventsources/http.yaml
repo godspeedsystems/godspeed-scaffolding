@@ -3,6 +3,11 @@ port: 3000
 
 docs:
   endpoint: /api-docs
+  info:
+    title: Sample Mongo CRUD App
+    version: 1.1.0
+    summary: some http calls
+    description: lets play with mongo db crud app
 
 request_body_limit: 20000 #bytes
 file_size_limit: 50000 #bytes
