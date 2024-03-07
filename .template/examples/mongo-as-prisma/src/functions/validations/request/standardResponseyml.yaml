@@ -9,8 +9,8 @@ tasks:
       code: 400
       data: | # error, message and original event data is present in the inputs object
         <%
-          const {validationError, event, message} = inputs;
-          return {validationError, event, message};
+          const {validation_error, event, message} = inputs;
+          return {validation_error, event, message};
         %>
     # logs:
     #   before:

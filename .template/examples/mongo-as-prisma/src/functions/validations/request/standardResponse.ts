@@ -7,10 +7,10 @@ import { GSContext, logger } from "@godspeedsystems/core";
  */
 export default function (ctx: GSContext) {
     // logger.error(ctx.inputs.data.validation_error);
-    const {validationError, event, message} = ctx.inputs.data;
+    const {validation_error, event, message} = ctx.inputs.data;
     return {
         success: false,
-        data: {validationError, event, message},
+        data: {validation_error, event, message},
         code: 400
     }
 }
