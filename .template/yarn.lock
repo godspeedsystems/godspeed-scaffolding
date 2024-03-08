@@ -16,10 +16,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@godspeedsystems/core@^2.3.2", "@godspeedsystems/core@^2.4.0", "@godspeedsystems/core@^2.4.2":
-  version "2.4.7"
-  resolved "https://registry.npmjs.org/@godspeedsystems/core/-/core-2.4.7.tgz"
-  integrity sha512-pFYdtfs6cXqhpIRcxI+Ci6BR1DZx3/Ze5QwTd0jXX8JioKRGSdv87lcIx0mqRWDNiN5U3sHa28W1mm6htr2EKA==
+"@godspeedsystems/core@^2.4.0", "@godspeedsystems/core@^2.4.2", "@godspeedsystems/core@^2.4.8":
+  version "2.4.8"
+  resolved "https://registry.npmjs.org/@godspeedsystems/core/-/core-2.4.8.tgz"
+  integrity sha512-n6zLc9AIpkBXZIhjo9f21CI3yt79KZTvys1b2jKfOuYuUkDh+22U9vJ9RVL7rvgyEeppWqFE5u5yOJPKCU35yg==
   dependencies:
     "@godspeedsystems/metrics" "^0.0.3"
     "@opentelemetry/api" "^1.6.0"
@@ -48,17 +48,17 @@
   dependencies:
     prom-client "12.0.0"
 
-"@godspeedsystems/plugins-axios-as-datasource@^1.0.1":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@godspeedsystems/plugins-axios-as-datasource/-/plugins-axios-as-datasource-1.0.2.tgz"
-  integrity sha512-9e5KMKYX9xGxe3C6YxhfPgFMWJ0mSmXCqGKEk9tANykexfN0FP3ZeUkATMSTSyKCp2pDVns8dhYj1Bw1nRJkuw==
+"@godspeedsystems/plugins-axios-as-datasource@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@godspeedsystems/plugins-axios-as-datasource/-/plugins-axios-as-datasource-1.0.3.tgz"
+  integrity sha512-viCBwxFa+ZA9ab8it9lXrI119hy8mnPCz63KYmQdvLK9pNzo5B/m+J7Pr9Ss+ocVheUlJlpyfvxlr6FIrmvvvg==
   dependencies:
     "@godspeedsystems/core" "^2.4.0"
     axios "^1.5.0"
     axios-retry "^3.7.0"
     pino-pretty "^10.2.0"
 
-"@godspeedsystems/plugins-express-as-http@^1.0.10":
+"@godspeedsystems/plugins-express-as-http@^1.0.17":
   version "1.0.17"
   resolved "https://registry.npmjs.org/@godspeedsystems/plugins-express-as-http/-/plugins-express-as-http-1.0.17.tgz"
   integrity sha512-tTV83eVM/n26AuuaZhq/vnGW1mSLbdQWb9Ab0HfU9PPdhZJBXRw4UQS33YjYLG7cLA1zl3ZdTtpTCxJU29EI0A==
@@ -173,10 +173,15 @@
     slash "3.0.0"
     source-map "^0.7.3"
 
-"@swc/core-darwin-arm64@1.4.5":
+"@swc/core-linux-x64-gnu@1.4.5":
   version "1.4.5"
-  resolved "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.4.5.tgz"
-  integrity sha512-toMSkbByHNfGXESyY1aiq5L3KutgijrNWB/THgdHIA1aIbwtrgMdFQfxpSE+INuuvWYi/Fxarv86EnU7ewbI0Q==
+  resolved "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.4.5.tgz"
+  integrity sha512-srR+YN86Oerzoghd0DPCzTbTp08feeJPSr9kkNdmtQWENOa4l/9cJV3+XY6vviw0sEjezPmYnc3SwRxJRaxvEw==
+
+"@swc/core-linux-x64-musl@1.4.5":
+  version "1.4.5"
+  resolved "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.4.5.tgz"
+  integrity sha512-aSf41LZtDeG5VXI4RCnzcu0UInPyNm3ip8Kw+sCK+sSqW9o7DgBkyqqbip3RZq84fNUHBQQQQdKXetltsyRRqw==
 
 "@swc/core@^1.2.66", "@swc/core@^1.3.93", "@swc/core@>=1.2.50":
   version "1.4.5"
@@ -1033,11 +1038,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@~2.3.2:
-  version "2.3.3"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
-  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 function-bind@^1.1.1:
   version "1.1.1"

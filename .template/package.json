@@ -21,7 +21,7 @@
     "clean:win32": "rmdir /s /q dist",
     "clean:darwin:linux": "rm -rf dist",
     "clean:default": "rm -rf dist",
-    "serve": "nodemon --watch src --watch config --watch mappings --watch plugins -e ts,js,yaml,json,.env --exec 'npm run build && npm run preview'"
+    "serve": "nodemon --watch src --watch config --watch mappings --watch plugins -e ts,js,yaml,json,.env --exec \"npm run build && npm run preview\""
   },
   "author": "",
   "license": "ISC",
@@ -37,9 +37,9 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@godspeedsystems/core": "^2.3.2",
-    "@godspeedsystems/plugins-axios-as-datasource": "^1.0.1",
-    "@godspeedsystems/plugins-express-as-http": "^1.0.10",
+    "@godspeedsystems/core": "^2.4.8",
+    "@godspeedsystems/plugins-axios-as-datasource": "^1.0.3",
+    "@godspeedsystems/plugins-express-as-http": "^1.0.17",
     "@prisma/client": "^5.2.0",
     "config": "^3.3.9",
     "dotenv": "^16.0.3",
