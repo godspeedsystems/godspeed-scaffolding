@@ -10,7 +10,7 @@
     "dev:darwin:linux": "nodemon --watch src -e ts,js,yaml,json -r dotenv ./src/index.ts",
     "dev:default": "nodemon --watch src -e ts,js,yaml,json -r dotenv ./src/index.ts",
     "build": "run-script-os",
-    "build:win32": "swc src -d dist & copyfiles -u 1 ./src/**/!(*.ts) ./dist/ & copyfiles -u 1 ./config/ ./dist/config & copyfiles -u 1 ./src/mappings/ ./dist/mappings & copyfiles -u 1 ./src/plugins/ ./dist/plugins",
+    "build:win32": "swc src -d dist & copyfiles -a -u 1 ./src/**/!(*.ts) ./dist/ & copyfiles -a -u 1 ./config/ ./dist/config & copyfiles -a -u 1 ./src/mappings/ ./dist/mappings & copyfiles -a -u 1 ./src/plugins/ ./dist/plugins",
     "build:darwin:linux": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings && rsync -a ./src/plugins/ ./dist/plugins",
     "build:default": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings && rsync -a ./src/plugins/ ./dist/plugins",
     "preview": "run-script-os",
@@ -42,7 +42,7 @@
     "@godspeedsystems/plugins-express-as-http": "^1.0.17",
     "@prisma/client": "^5.2.0",
     "config": "^3.3.9",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.4.5",
     "pino-pretty": "^10.2.0",
     "prisma": "^5.2.0"
   }
