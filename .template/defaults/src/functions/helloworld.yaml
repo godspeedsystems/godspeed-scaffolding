@@ -2,4 +2,4 @@ id: helloworld
 tasks:
   - id: first_task
     fn: com.gs.return
-    args: <% "{name:Hello World!}"%>
+    args: <js% {"name":"Hello World!"} %>
