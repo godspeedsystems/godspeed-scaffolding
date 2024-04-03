@@ -1,6 +1,6 @@
 type: express
 port: 3000
-base_url: /api/v1 #the base url of the http service
+# base_url: /api/v1 #the base url of the http service
 
 #Bassic swagger setup
 docs:
