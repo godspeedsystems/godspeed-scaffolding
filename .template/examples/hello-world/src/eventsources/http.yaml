@@ -46,4 +46,8 @@ on_request_validation_error: validations.request.standardResponseyml
 on_response_validation_error:
   - id: response_validation_error_handler
     fn: com.gs.return
-    args: <%inputs%>
+    args:
+      success: false 
+      code: 400
+      data:    
+        message: <% inputs.validation_error.data.message %>
