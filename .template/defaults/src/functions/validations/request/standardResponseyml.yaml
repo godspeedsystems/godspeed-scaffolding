@@ -6,7 +6,7 @@ tasks:
     fn: com.gs.transform
     args:
       success: false
-      code: 400
+      code: 500
       data: | # error, message and original event data is present in the inputs object
         <%
           const {validation_error, event, message} = inputs;

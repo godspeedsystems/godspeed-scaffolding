@@ -9,3 +9,5 @@ log:
   bindings: # should pid and hostname be enabled in pino log bindings.
     pid: true
     hostname: true 
+
+SUPPRESS_NO_CONFIG_WARNING: 1

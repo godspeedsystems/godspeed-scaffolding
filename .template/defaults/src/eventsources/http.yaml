@@ -1,11 +1,13 @@
-type: express
-port: 3000
-base_url: /api/v1 #the base url of the http service
+type: express  # Defines the type of event source (Express.js HTTP server)
+port: 3000     # The port on which the HTTP service runs
 
-#Bassic swagger setup
+# Base URL for the HTTP service (Uncomment to enable), All API endpoints will be prefixed with this URL
+# base_url: /api/v1 
+
+# Basic Swagger Setup
 docs:
-  endpoint: /api-docs # the url on which the service will start
-  info: # info object as per swagger 3.0 spec
+  endpoint: /api-docs   # the url on which the service will start
+  info:   # info object as per swagger 3.0 spec
     title: Sample Helloworld App
     version: 1.1.0
     summary: Some http calls
@@ -23,8 +25,8 @@ docs:
     - url: 'http://localhost:3001'
       description: Internal API server
 
-request_body_limit: 20000 # maximum size of the request body (in bytes)
-file_size_limit: 50000 # How big a file can be uploaded (in bytes)
+request_body_limit: 20000   # set maximum size of the request body in bytes
+file_size_limit: 50000      # set max file upload size in bytes (default is 50 mb)
 
 #jwt settings to run by default on every event
 authn:
@@ -33,21 +35,26 @@ authn:
     audience: mycompany #aud in jwt token
     issuer: mycompany #iss in jwt token
 
-# authorization policies to run by default on every event
-# Uncomment this to start checking user roles.
-# This will require jwt to be setup, or another middleware to setup the user information in inputs
+# Authorization Policies (Uncomment to enforce role-based access control)
+# Requires JWT authentication or another middleware setting up `inputs.user.role`
 # authz:
-#   - id: check_user_role
-#     fn: com.gs.transform
-#     args: <%inputs.user.role === 'admin'%>
+#   - id: check_user_role  # Unique ID for this authorization rule
+#     fn: com.gs.transform  # Godspeed function to evaluate authorization logic
+#     args: <%inputs.user.role === 'admin'%>  # Example: Allow only admin users
 
-# validation error handling, to transform error responses
-on_request_validation_error: validations.request.standardResponseyml
-on_response_validation_error:
-  - id: response_validation_error_handler
-    fn: com.gs.return
-    args:
-      success: false 
-      code: 500
-      data:    
-        message: <% inputs.validation_error.data.message %>
+# Authorization can also be handled via a predefined workflow:
+# authz: authz.check_user  # Reference a workflow inside the functions folder
+
+# Handling Validation Errors
+on_request_validation_error: validations.request.standardResponse
+on_response_validation_error: validations.response.standardResponse
+
+# Alternatively, define custom error handling logic inline
+# on_response_validation_error:
+#   - id: response_validation_error_handler
+#     fn: com.gs.return
+#     args:
+#       success: false
+#       code: 500
+#       data:
+#         message: <% inputs.validation_error.data.message %>
