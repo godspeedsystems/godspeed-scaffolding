@@ -26,7 +26,6 @@ docs:
 request_body_limit: 20000 # maximum size of the request body (in bytes)
 file_size_limit: 50000 # How big a file can be uploaded (in bytes)
 
-authn: false
 # set jwt authn to run by default on every event
 # authn:
 #   jwt:
