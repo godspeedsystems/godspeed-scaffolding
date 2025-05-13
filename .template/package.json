@@ -11,8 +11,8 @@
     "dev:default": "nodemon --watch src -e ts,js,yaml,json -r dotenv ./src/index.ts",
     "build": "run-script-os",
     "build:win32": "swc src -d dist & copyfiles -a -u 1 \"./src/**/!(.ts)\" \"./dist/\"",
-    "build:darwin:linux": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings && rsync -a ./src/plugins/ ./dist/plugins",
-    "build:default": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings && rsync -a ./src/plugins/ ./dist/plugins",
+		"build:darwin:linux": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings",
+		"build:default": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings",
     "preview": "run-script-os",
     "preview:win32": "node dist\\index.js",
     "preview:darwin:linux": "node dist/index.js",
@@ -23,7 +23,7 @@
     "clean:default": "rm -rf dist",
     "prisma-db-push": "for i in src/datasources/*.prisma; do npx --yes prisma db push --schema $i; done;",
     "prisma-generate": "for i in src/datasources/*.prisma; do npx --yes prisma generate --schema $i; done;",
-    "serve": "nodemon --watch src --watch config --watch mappings --watch plugins -e ts,js,yaml,json,.env --exec \"npm run build && npm run preview\""
+    "serve": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\" && nodemon --watch src --watch config --watch mappings -e ts,js,yaml,json,.env --exec \"npm run build && npm run preview\""
 },
   "author": "",
   "license": "ISC",
