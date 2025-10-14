@@ -1,3 +1,8 @@
+src/datasources/prisma-clients
 node_modules
 dist/*
 package-lock.json
+.DS_Store
+.env
+*.db
+.template
